@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<image schemaversion="6.3" name="LimeJeOS-Leap-42.1">
+    <description type="system">
+        <author>Frederic Crozat</author>
+        <contact>fcrozat@suse.com</contact>
+        <specification>
+            Flatpak runtime and Sdk, based on Leap 42.1 JeOS
+        </specification>
+    </description>
+    <preferences>
+        <type image="tbz" />
+        <version>1.42.1</version>
+        <packagemanager>zypper</packagemanager>
+        <locale>en_US</locale>
+        <keytable>us.map.gz</keytable>
+        <timezone>Europe/Berlin</timezone>
+        <hwclock>utc</hwclock>
+        <rpm-excludedocs>true</rpm-excludedocs>
+        <rpm-check-signatures>false</rpm-check-signatures>
+    </preferences>
+    <profiles>
+        <profile name="sdk" description="Flatpack sdk"/>
+        <profile name="runtime" description="Flatpack runtime"/>
+    </profiles>
+    <users group="root">
+        <user password="$1$wYJUgpM5$RXMMeASDc035eX.NbYWFl0" home="/root" name="root"/>
+    </users>
+    <repository type="yast2" imageinclude="true">
+        <source path="obs://leap/42.1/repo/oss"/>
+    </repository>
+    <packages type="image">
+        <package name="ca-certificates-mozilla"/> <!-- OPENSUSE: needed for https -->
+        <package name="tar"/>
+        <package name="timezone"/>
+        <package name="elfutils"/>
+        <package name="pkg-config"/>
+        <package name="sg3_utils"/>
+        <package name="ncurses-utils"/>
+        <!-- needed for fdo like runtime -->
+        <package name="fontconfig"/>
+        <package name="fonts-config"/>
+        <package name="which"/>
+        <package name="curl"/>
+        <package name="hicolor-icon-theme"/>
+        <package name="shared-mime-info"/>
+        <!-- X11 stack -->
+        <package name="libICE6"/>
+        <package name="libSM6"/>
+        <package name="libX11-6"/>
+        <package name="libXau6"/>
+        <package name="libXcomposite1"/>
+        <package name="libXcursor1"/>
+        <package name="libXdamage1"/>
+        <package name="libXext6"/>
+        <package name="libXfixes3"/>
+        <package name="libXft2"/>
+        <package name="libXi6"/>
+        <package name="libXinerama1"/>
+        <package name="libXpm4"/>
+        <package name="libXrandr2"/>
+        <package name="libXrender1"/>
+        <package name="libXt6"/>
+        <package name="libXtst6"/>
+        <package name="libXv1"/>
+        <package name="libXxf86vm1"/>
+        <package name="libXfont1"/>
+        <package name="libfontenc1"/>
+        <!-- Mesa -->
+        <package name="Mesa-libEGL1"/>
+        <package name="Mesa-libglapi0"/>
+        <package name="Mesa-libGL1"/>
+        <package name="libgdbm4"/>
+        <package name="libGLU1"/>
+        <package name="libGLEW1_13"/>
+        <!-- pulseaudio-->
+        <package name="libpulse0"/>
+        <package name="libpulse-mainloop-glib0"/>
+    </packages>
+    <packages type="bootstrap" profiles="sdk">
+        <package name="valgrind"/>
+        <package name="strace"/>
+        <package name="gdb"/>
+        <package name="cpio"/>
+        <package name="rpm-build"/>
+        <package name="zypper"/>
+        <package name="gcc"/>
+        <package name="glibc-devel"/>
+        <package name="xz-devel"/>
+        <package name="libbz2-devel"/>
+        <package name="libpng-devel"/>
+        <package name="libjpeg-devel"/>
+        <package name="libICE-devel"/>
+        <package name="libSM-devel"/>
+        <package name="libX11-devel"/>
+        <package name="libXau-devel"/>
+        <package name="libXcomposite-devel"/>
+        <package name="libXcursor-devel"/>
+        <package name="libXdamage-devel"/>
+        <package name="libXext-devel"/>
+        <package name="libXfixes-devel"/>
+        <package name="libXft-devel"/>
+        <package name="libXi-devel"/>
+        <package name="libXinerama-devel"/>
+        <package name="libXpm-devel"/>
+        <package name="libXrandr-devel"/>
+        <package name="libXrender-devel"/>
+        <package name="libXt-devel"/>
+        <package name="libXtst-devel"/>
+        <package name="libXv-devel"/>
+        <package name="libXxf86vm-devel"/>
+        <package name="libXfont-devel"/>
+        <package name="libfontenc-devel"/>
+        <package name="mesa-libEGL-devel"/>
+        <package name="libgbm-devel"/>
+        <package name="mesa-libGL-devel"/>
+        <package name="glu-devel"/>
+        <package name="glew-devel"/>
+        <package name="libpulse-devel"/>
+    </packages>
+    <packages type="bootstrap">
+    <!--    <package name="udev"/>-->
+        <package name="filesystem"/>
+        <package name="glibc-locale"/>
+        <package name="cracklib-dict-small"/>
+        <package name="ca-certificates"/>
+        <package name="openSUSE-release"/>
+    </packages>
+    <packages type="delete">
+        <package name="dracut"/>
+        <package name="pigz"/>
+        <package name="kmod-compat"/>
+        <package name="hardlink"/>
+        <package name="dbus-1"/>
+        <package name="kbd"/>
+        <package name="kmod"/>
+        <package name="libqrencode3"/>
+        <package name="pam-config"/>
+        <package name="libwrap0"/>
+        <package name="libapparmor1"/>
+        <package name="libcryptsetup4"/>
+        <package name="netcfg"/>
+        <package name="acl"/>
+        <package name="suse-module-tools"/>
+        <package name="device-mapper"/>
+        <package name="shadow"/>
+        <package name="expat"/>
+        <package name="elfutils"/>
+        <package name="fipscheck"/>
+        <package name="libfipscheck1"/>
+        <package name="libaio1"/>
+        <package name="libseccomp2"/>
+        <package name="libasm2"/>
+        <package name="libdw1"/>
+        <package name="libasm1"/>
+        <package name="libdb-4_8"/>
+        <!-- needed on Leap 42.2 for libsystemd.so.0
+        <package name="systemd"/>
+        <package name="systemd-sysvinit"/>
+        <package name="systemd-presets-branding-openSUSE"/>
+        -->
+    </packages>
+    <packages type="delete" profiles="runtime">
+        <package name="perl"/>
+        <package name="sysvinit-tools"/>
+        <package name="aaa_base"/>
+        <package name="file"/>
+        <package name="cpio"/>
+        <!-- comment the following lines to get back zypper and check dependencies in chroot -->
+        <package name="zypper"/>
+        <package name="procps"/>
+        <package name="libprocps3"/>
+        <package name="libzypp"/>
+        <package name="krb5"/>
+        <package name="libcurl4"/>
+    </packages>
+</image>

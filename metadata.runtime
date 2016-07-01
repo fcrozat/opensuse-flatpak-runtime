@@ -1,0 +1,11 @@
+[Runtime]
+name=org.openSUSE.Runtime/x86_64/1
+runtime=org.flatpak.Runtime/x86_64/1
+sdk=org.openSUSE.Sdk/x86_64/1
+
+[Environment]
+LD_LIBRARY_PATH=/app/lib64
+GI_TYPELIB_PATH=/app/lib64/girepository-1.0
+
+[Session Bus Policy]
+org.freedesktop.portal.*=talk
