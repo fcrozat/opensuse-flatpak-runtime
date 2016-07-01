@@ -16,10 +16,5 @@ ln -s ../sysroot/tmp $TARGET/tmp
 mv buildroot/usr $TARGET/usr
 mv buildroot/etc $TARGET/etc
 ln -s var/lib/rpm $TARGET/usr/share/rpm
-cp $TARGET/etc/{passwd,group} $TARGET/usr/lib
-for i in passwd group; do
-    sed -i -e '/^root:/D' buildroot-prepare/usr/lib/$i
-    sed -i -e '/^root:/!D' buildroot-prepare/etc/$i
-done
 mv $TARGET/usr/local $TARGET/var/usrlocal
 
