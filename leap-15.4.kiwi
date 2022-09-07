@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<image schemaversion="6.3" name="LimeJeOS-Leap-42.1">
+<image schemaversion="6.3" name="openSUSE-Leap-15.4-JeOS">
     <description type="system">
         <author>Frederic Crozat</author>
         <contact>fcrozat@suse.com</contact>
         <specification>
-            Flatpak runtime and Sdk, based on Leap 42.1 JeOS
+            Flatpak runtime and Sdk, based on Leap 15.4 JeOS
         </specification>
     </description>
     <preferences>
         <type image="tbz" />
-        <version>1.42.1</version>
+        <version>15.4</version>
         <packagemanager>zypper</packagemanager>
         <locale>en_US</locale>
         <keytable>us.map.gz</keytable>
@@ -27,7 +27,7 @@
         <user password="$1$wYJUgpM5$RXMMeASDc035eX.NbYWFl0" home="/root" name="root"/>
     </users>
     <repository type="yast2" imageinclude="true">
-        <source path="obs://leap/42.1/repo/oss"/>
+        <source path="http://download.opensuse.org/distribution/leap/15.4/repo/oss/"/>
     </repository>
     <packages type="image">
         <package name="ca-certificates-mozilla"/> <!-- OPENSUSE: needed for https -->
@@ -72,7 +72,7 @@
         <package name="Mesa-libGL1"/>
         <package name="libgdbm4"/>
         <package name="libGLU1"/>
-        <package name="libGLEW1_13"/>
+        <package name="libGLEW2_2"/>
         <!-- pulseaudio-->
         <package name="libpulse0"/>
         <package name="libpulse-mainloop-glib0"/>
@@ -111,9 +111,9 @@
         <package name="libXxf86vm-devel"/>
         <package name="libXfont-devel"/>
         <package name="libfontenc-devel"/>
-        <package name="mesa-libEGL-devel"/>
+        <package name="Mesa-libEGL-devel"/>
         <package name="libgbm-devel"/>
-        <package name="mesa-libGL-devel"/>
+        <package name="Mesa-libGL-devel"/>
         <package name="glu-devel"/>
         <package name="glew-devel"/>
         <package name="libpulse-devel"/>
