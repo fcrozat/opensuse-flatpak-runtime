@@ -17,5 +17,5 @@ while (( "$#" )); do
     ostree checkout --repo=repo --subpath=$1 -U $SRC_COMMIT $DIR/$2
     shift 2
 done
-ostree commit --repo=repo --no-xattrs --owner-uid=0 --owner-gid=0 --link-checkout-speedup -s "Commit" --branch $DST_COMMIT $DIR
+cat $METADATA | xargs -0 -I XXX ostree commit --repo=repo --no-xattrs --owner-uid=0 --owner-gid=0 --canonical-permissions --link-checkout-speedup -s "Commit" --branch $DST_COMMIT $DIR --add-metadata-string xa.metadata=XXX
 rm -rf $DIR

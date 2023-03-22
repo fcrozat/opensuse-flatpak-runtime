@@ -82,6 +82,7 @@
         <package name="strace"/>
         <package name="gdb"/>
         <package name="cpio"/>
+        <package name="rpm"/>
         <package name="rpm-build"/>
         <package name="zypper"/>
         <package name="gcc"/>

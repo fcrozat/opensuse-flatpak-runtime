@@ -1,7 +1,7 @@
 [Runtime]
-name=org.openSUSE.Sdk/x86_64/20160625
-runtime=org.openSUSE.Runtime/x86_64/20160625
-sdk=org.openSUSE.Sdk/x86_64/20160625
+name=org.openSUSE.Sdk
+runtime=org.openSUSE.Platform/x86_64/15.4
+sdk=org.openSUSE.Sdk/x86_64/15.4
 
 [Environment]
 LD_LIBRARY_PATH=/app/lib64
