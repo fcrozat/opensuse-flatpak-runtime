@@ -21,7 +21,7 @@
     </preferences>
     <profiles>
         <profile name="sdk" description="Flatpack sdk"/>
-        <profile name="runtime" description="Flatpack runtime"/>
+        <profile name="platform" description="Flatpack runtime"/>
     </profiles>
     <users group="root">
         <user password="$1$wYJUgpM5$RXMMeASDc035eX.NbYWFl0" home="/root" name="root"/>
@@ -29,8 +29,9 @@
     <repository type="yast2" imageinclude="true">
         <source path="http://download.opensuse.org/distribution/leap/15.4/repo/oss/"/>
     </repository>
-    <packages type="image">
+    <packages type="image" profiles="platform">
         <package name="ca-certificates-mozilla"/> <!-- OPENSUSE: needed for https -->
+        <package name="bash-sh"/>
         <package name="tar"/>
         <package name="timezone"/>
         <package name="elfutils"/>
@@ -78,6 +79,7 @@
         <package name="libpulse-mainloop-glib0"/>
     </packages>
     <packages type="bootstrap" profiles="sdk">
+        <package name="bash-sh"/>
         <package name="valgrind"/>
         <package name="strace"/>
         <package name="gdb"/>
@@ -161,7 +163,7 @@
         <package name="systemd-presets-branding-openSUSE"/>
         -->
     </packages>
-    <packages type="delete" profiles="runtime">
+    <packages type="delete" profiles="platform">
         <package name="perl"/>
         <package name="sysvinit-tools"/>
         <package name="aaa_base"/>
